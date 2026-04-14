@@ -39,16 +39,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Catalogo\Mozo.CatalogoBusiness\Mozo.CatalogoBusiness.csproj" />
-    <ProjectReference Include="..\..\Catalogo\Mozo.CatalogoComposition\Mozo.CatalogoComposition.csproj" />
-    <ProjectReference Include="..\..\Comun\Mozo.HelperWeb\Mozo.HelperWeb.csproj" />
-    <ProjectReference Include="..\..\Comun\Mozo.Model\Mozo.Model.csproj" />
-    <ProjectReference Include="..\..\Login\Mozo.LoginBusiness\Mozo.LoginBusiness.csproj" />
-    <ProjectReference Include="..\..\Login\Mozo.LoginComposition\Mozo.LoginComposition.csproj" />
-    <ProjectReference Include="..\..\Maestro\Mozo.MaestroBusiness\Mozo.MaestroBusiness.csproj" />
-    <ProjectReference Include="..\..\Maestro\Mozo.MaestroComposition\Mozo.MaestroComposition.csproj" />
-    <ProjectReference Include="..\..\Seguridad\Mozo.SeguridadBusiness\Mozo.SeguridadBusiness.csproj" />
-    <ProjectReference Include="..\..\Seguridad\Mozo.SeguridadComposition\Mozo.SeguridadComposition.csproj" />
+    <ProjectReference Include="..\Catalogo\Mozo.CatalogoBusiness\Mozo.CatalogoBusiness.csproj" />
+    <ProjectReference Include="..\Catalogo\Mozo.CatalogoComposition\Mozo.CatalogoComposition.csproj" />
+    <ProjectReference Include="..\Comun\Mozo.HelperWeb\Mozo.HelperWeb.csproj" />
+    <ProjectReference Include="..\Comun\Mozo.Model\Mozo.Model.csproj" />
+    <ProjectReference Include="..\Login\Mozo.LoginBusiness\Mozo.LoginBusiness.csproj" />
+    <ProjectReference Include="..\Login\Mozo.LoginComposition\Mozo.LoginComposition.csproj" />
+    <ProjectReference Include="..\Maestro\Mozo.MaestroBusiness\Mozo.MaestroBusiness.csproj" />
+    <ProjectReference Include="..\Maestro\Mozo.MaestroComposition\Mozo.MaestroComposition.csproj" />
+    <ProjectReference Include="..\Seguridad\Mozo.SeguridadBusiness\Mozo.SeguridadBusiness.csproj" />
+    <ProjectReference Include="..\Seguridad\Mozo.SeguridadComposition\Mozo.SeguridadComposition.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -9,43 +9,43 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Seguridad", "Seguridad", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Login", "Login", "{85C3F5C3-A231-4FD3-85A9-B444940D541B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mozo.LoginBusiness", "..\Login\Mozo.LoginBusiness\Mozo.LoginBusiness.csproj", "{86D17385-153A-4E38-85FE-843BBCC34A20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mozo.LoginBusiness", "Login\Mozo.LoginBusiness\Mozo.LoginBusiness.csproj", "{86D17385-153A-4E38-85FE-843BBCC34A20}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mozo.LoginData", "..\Login\Mozo.LoginData\Mozo.LoginData.csproj", "{6C339E33-64E0-4450-9520-D11866D53F7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mozo.LoginData", "Login\Mozo.LoginData\Mozo.LoginData.csproj", "{6C339E33-64E0-4450-9520-D11866D53F7A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mozo.SeguridadBusiness", "..\Seguridad\Mozo.SeguridadBusiness\Mozo.SeguridadBusiness.csproj", "{B5D570D3-04CD-48F2-A670-F682FE4AE744}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mozo.SeguridadBusiness", "Seguridad\Mozo.SeguridadBusiness\Mozo.SeguridadBusiness.csproj", "{B5D570D3-04CD-48F2-A670-F682FE4AE744}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.ApiSeguridad", "Mozo.ApiSeguridad\Mozo.ApiSeguridad.csproj", "{240B8570-33F8-482A-A4F5-411348A9040B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.Helper", "..\Comun\Mozo.Helper\Mozo.Helper.csproj", "{D034155D-A604-47F3-8512-CD17E54F6A89}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.Helper", "Comun\Mozo.Helper\Mozo.Helper.csproj", "{D034155D-A604-47F3-8512-CD17E54F6A89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.Model", "..\Comun\Mozo.Model\Mozo.Model.csproj", "{28FCB494-B3D7-454A-8C78-4873D4242D2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.Model", "Comun\Mozo.Model\Mozo.Model.csproj", "{28FCB494-B3D7-454A-8C78-4873D4242D2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.HelperWeb", "..\Comun\Mozo.HelperWeb\Mozo.HelperWeb.csproj", "{4EE06ECE-5608-4CB5-BC9D-11314AF2AF04}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.HelperWeb", "Comun\Mozo.HelperWeb\Mozo.HelperWeb.csproj", "{4EE06ECE-5608-4CB5-BC9D-11314AF2AF04}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maestro", "Maestro", "{38CB7412-CF7E-431F-AD5D-8D85AC3B919A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.MaestroBusiness", "..\Maestro\Mozo.MaestroBusiness\Mozo.MaestroBusiness.csproj", "{436B0857-AB3B-4988-9DA6-E4CFB7DC7E94}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.MaestroBusiness", "Maestro\Mozo.MaestroBusiness\Mozo.MaestroBusiness.csproj", "{436B0857-AB3B-4988-9DA6-E4CFB7DC7E94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.MaestroData", "..\Maestro\Mozo.MaestroData\Mozo.MaestroData.csproj", "{4985570C-2B0E-4B92-ABDC-A37B3651D0B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.MaestroData", "Maestro\Mozo.MaestroData\Mozo.MaestroData.csproj", "{4985570C-2B0E-4B92-ABDC-A37B3651D0B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.SeguridadComposition", "..\Seguridad\Mozo.SeguridadComposition\Mozo.SeguridadComposition.csproj", "{8168A1D6-28E2-4E5D-BD46-94698F9DA396}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.SeguridadComposition", "Seguridad\Mozo.SeguridadComposition\Mozo.SeguridadComposition.csproj", "{8168A1D6-28E2-4E5D-BD46-94698F9DA396}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.MaestroComposition", "..\Maestro\Mozo.MaestroComposition\Mozo.MaestroComposition.csproj", "{1D1A788B-B5F1-F357-D003-B8A45B436B96}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.MaestroComposition", "Maestro\Mozo.MaestroComposition\Mozo.MaestroComposition.csproj", "{1D1A788B-B5F1-F357-D003-B8A45B436B96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.LoginComposition", "..\Login\Mozo.LoginComposition\Mozo.LoginComposition.csproj", "{B3EC98D8-7E00-4C3F-A559-8526A70844AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.LoginComposition", "Login\Mozo.LoginComposition\Mozo.LoginComposition.csproj", "{B3EC98D8-7E00-4C3F-A559-8526A70844AE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalogo", "Catalogo", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Empresa", "Empresa", "{EEACDA9B-9B28-42D7-B784-3B1A63EF8C5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.CatalogoData", "..\Catalogo\Mozo.CatalogoData\Mozo.CatalogoData.csproj", "{56187FCD-2ED6-437F-93C8-3B33F9CF634C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.CatalogoData", "Catalogo\Mozo.CatalogoData\Mozo.CatalogoData.csproj", "{56187FCD-2ED6-437F-93C8-3B33F9CF634C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.CatalogoBusiness", "..\Catalogo\Mozo.CatalogoBusiness\Mozo.CatalogoBusiness.csproj", "{FE0278B4-04D1-43BA-BCE0-101056E44F2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.CatalogoBusiness", "Catalogo\Mozo.CatalogoBusiness\Mozo.CatalogoBusiness.csproj", "{FE0278B4-04D1-43BA-BCE0-101056E44F2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.CatalogoComposition", "..\Catalogo\Mozo.CatalogoComposition\Mozo.CatalogoComposition.csproj", "{E924BDD8-ACCD-45B7-A38B-CE2222ABCC98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.CatalogoComposition", "Catalogo\Mozo.CatalogoComposition\Mozo.CatalogoComposition.csproj", "{E924BDD8-ACCD-45B7-A38B-CE2222ABCC98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.SeguridadData", "..\Seguridad\Mozo.SeguridadData\Mozo.SeguridadData.csproj", "{B8ECD63E-7C12-FF26-B030-E564B1A085A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozo.SeguridadData", "Seguridad\Mozo.SeguridadData\Mozo.SeguridadData.csproj", "{B8ECD63E-7C12-FF26-B030-E564B1A085A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
