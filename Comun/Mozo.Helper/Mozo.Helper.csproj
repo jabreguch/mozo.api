@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Pagination\**" />
+    <EmbeddedResource Remove="Pagination\**" />
+    <None Remove="Pagination\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Enu\EnuBoga.cs" />
+    <Compile Remove="Enu\EnuBogaExt.cs" />
+    <Compile Remove="Enu\EnuCondominio.cs" />
+    <Compile Remove="Enu\EnuContabilidad.cs" />
+    <Compile Remove="Enu\EnuEmpresa.cs" />
+    <Compile Remove="Enu\EnuGasto.cs" />
+    <Compile Remove="Enu\EnuMaestro.cs" />
+    <Compile Remove="Enu\EnuUrbano.cs" />
+    <Compile Remove="Global\GlobalSessionMarketinkgModel.cs" />
+    <Compile Remove="Global\GloCapcha.cs" />
+    <Compile Remove="Global\GloFile.cs" />
+    <Compile Remove="Global\GloSession.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.72" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.9" />
+  </ItemGroup>
+
+
+</Project>
