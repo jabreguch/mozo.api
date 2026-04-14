@@ -1,0 +1,180 @@
+Violation of UNIQUE KEY constraint 'Empresa_BlogUk'. Cannot insert duplicate key in object 'Empresa.TblBlog'. The duplicate key value is (1, 1, <NULL>).
+The statement has been terminated. 18:30:45
+Status: 500
+Instance: /Empresa/BlogApi/Update
+Type: internal-server-error
+Detail: Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'Empresa_BlogUk'. Cannot insert duplicate key in object 'Empresa.TblBlog'. The duplicate key value is (1, 1, <NULL>).
+The statement has been terminated.
+   at Mozo.AppEmpresa.Service.BlogService.Update(BlogModel c) in D:\Desarrollo\PrjMozo\Mozo.ApiEmpresa\Mozo.AppEmpresa\Service\BlogService.cs:line 103
+   at Mozo.ApiEmpresa.Controllers.Admin.BlogApiController.Update(BlogModel c) in D:\Desarrollo\PrjMozo\Mozo.ApiEmpresa\Empresa.Api\Controllers\Admin\BlogApiController.cs:line 56
+   at lambda_method439(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+ClientConnectionId:208765d6-a725-45e2-8c55-78f31ba6b45b
+Error Number:2627,State:1,Class:14...traceId: 00-6fd619a6b85fc976c17f0f593273ade0-9af49aec90e2ed90-00
+Cannot insert the value NULL into column 'CoServicio', table 'Logistica.Empresa.TblBlog'; column does not allow nulls. UPDATE fails.
+The statement has been terminated. 18:31:45
+Status: 500
+Instance: /Empresa/BlogApi/Delete
+Type: internal-server-error
+Detail: Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'CoServicio', table 'Logistica.Empresa.TblBlog'; column does not allow nulls. UPDATE fails.
+The statement has been terminated.
+   at Mozo.AppEmpresa.Service.BlogService.Delete(BlogModel c) in D:\Desarrollo\PrjMozo\Mozo.ApiEmpresa\Mozo.AppEmpresa\Service\BlogService.cs:line 80
+   at Mozo.ApiEmpresa.Controllers.Admin.BlogApiController.Delete(BlogModel c) in D:\Desarrollo\PrjMozo\Mozo.ApiEmpresa\Empresa.Api\Controllers\Admin\BlogApiController.cs:line 88
+   at lambda_method441(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+ClientConnectionId:208765d6-a725-45e2-8c55-78f31ba6b45b
+Error Number:515,State:2,Class:16...traceId: 00-ab42373b77fd32f2b8c65285bae1d0f3-8bc637f688af2483-00
+Violation of UNIQUE KEY constraint 'Empresa_BlogUk'. Cannot insert duplicate key in object 'Empresa.TblBlog'. The duplicate key value is (1, 4, <NULL>).
+The statement has been terminated. 18:32:56
+Status: 500
+Instance: /Empresa/BlogApi/Update
+Type: internal-server-error
+Detail: Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'Empresa_BlogUk'. Cannot insert duplicate key in object 'Empresa.TblBlog'. The duplicate key value is (1, 4, <NULL>).
+The statement has been terminated.
+   at Mozo.AppEmpresa.Service.BlogService.Update(BlogModel c) in D:\Desarrollo\PrjMozo\Mozo.ApiEmpresa\Mozo.AppEmpresa\Service\BlogService.cs:line 103
+   at Mozo.ApiEmpresa.Controllers.Admin.BlogApiController.Update(BlogModel c) in D:\Desarrollo\PrjMozo\Mozo.ApiEmpresa\Empresa.Api\Controllers\Admin\BlogApiController.cs:line 56
+   at lambda_method439(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+ClientConnectionId:208765d6-a725-45e2-8c55-78f31ba6b45b
+Error Number:2627,State:1,Class:14...traceId: 00-3b34d36324df8fb951ef75be2763027c-fd6f8c93895ba3c6-00
+Violation of UNIQUE KEY constraint 'Empresa_BlogUk'. Cannot insert duplicate key in object 'Empresa.TblBlog'. The duplicate key value is (1, 4, <NULL>).
+The statement has been terminated. 18:33:49
+Status: 500
+Instance: /Empresa/BlogApi/Update
+Type: internal-server-error
+Detail: Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'Empresa_BlogUk'. Cannot insert duplicate key in object 'Empresa.TblBlog'. The duplicate key value is (1, 4, <NULL>).
+The statement has been terminated.
+   at Mozo.AppEmpresa.Service.BlogService.Update(BlogModel c) in D:\Desarrollo\PrjMozo\Mozo.ApiEmpresa\Mozo.AppEmpresa\Service\BlogService.cs:line 103
+   at Mozo.ApiEmpresa.Controllers.Admin.BlogApiController.Update(BlogModel c) in D:\Desarrollo\PrjMozo\Mozo.ApiEmpresa\Empresa.Api\Controllers\Admin\BlogApiController.cs:line 56
+   at lambda_method439(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+ClientConnectionId:208765d6-a725-45e2-8c55-78f31ba6b45b
+Error Number:2627,State:1,Class:14...traceId: 00-cdf8755c6934f4754b07aa692e3eea51-31090cfb522fc2f9-00
+Violation of UNIQUE KEY constraint 'Empresa_BlogUk'. Cannot insert duplicate key in object 'Empresa.TblBlog'. The duplicate key value is (1, 4, <NULL>).
+The statement has been terminated. 18:34:33
+Status: 500
+Instance: /Empresa/BlogApi/Update
+Type: internal-server-error
+Detail: Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'Empresa_BlogUk'. Cannot insert duplicate key in object 'Empresa.TblBlog'. The duplicate key value is (1, 4, <NULL>).
+The statement has been terminated.
+   at Mozo.AppEmpresa.Service.BlogService.Update(BlogModel c) in D:\Desarrollo\PrjMozo\Mozo.ApiEmpresa\Mozo.AppEmpresa\Service\BlogService.cs:line 103
+   at Mozo.ApiEmpresa.Controllers.Admin.BlogApiController.Update(BlogModel c) in D:\Desarrollo\PrjMozo\Mozo.ApiEmpresa\Empresa.Api\Controllers\Admin\BlogApiController.cs:line 56
+   at lambda_method439(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+ClientConnectionId:208765d6-a725-45e2-8c55-78f31ba6b45b
+Error Number:2627,State:1,Class:14...traceId: 00-8bb4cb7360f5498718410357257b09cd-220ecf226e7f277b-00
+Violation of UNIQUE KEY constraint 'Empresa_BlogUk'. Cannot insert duplicate key in object 'Empresa.TblBlog'. The duplicate key value is (1, 4, <NULL>).
+The statement has been terminated. 18:34:35
+Status: 500
+Instance: /Empresa/BlogApi/Update
+Type: internal-server-error
+Detail: Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'Empresa_BlogUk'. Cannot insert duplicate key in object 'Empresa.TblBlog'. The duplicate key value is (1, 4, <NULL>).
+The statement has been terminated.
+   at Mozo.AppEmpresa.Service.BlogService.Update(BlogModel c) in D:\Desarrollo\PrjMozo\Mozo.ApiEmpresa\Mozo.AppEmpresa\Service\BlogService.cs:line 103
+   at Mozo.ApiEmpresa.Controllers.Admin.BlogApiController.Update(BlogModel c) in D:\Desarrollo\PrjMozo\Mozo.ApiEmpresa\Empresa.Api\Controllers\Admin\BlogApiController.cs:line 56
+   at lambda_method439(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+ClientConnectionId:208765d6-a725-45e2-8c55-78f31ba6b45b
+Error Number:2627,State:1,Class:14...traceId: 00-23dd05abaf241414e2c66481725b3637-89f70b4f8091c234-00

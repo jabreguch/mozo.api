@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mozo.ApiSeguridad</name>
+    </assembly>
+    <members>
+        <member name="T:Mozo.Api.Catalogo.AtributoEndPoints">
+            <summary>
+            Clase estatica que para llamar al grupo de end points "tblatributo".
+            </summary>
+            <summary>
+            Clase estatica donde se encuentran los procedimientos y funciones de los end points "tblatributo".
+            </summary>
+        </member>
+        <member name="M:Mozo.Api.Catalogo.AtributoEndPoints.MapAtributo(Microsoft.AspNetCore.Routing.RouteGroupBuilder)">
+            <summary>
+            Función que devuelve el grupo de end points de la entidad "tblatributo".
+            </summary>
+        </member>
+        <member name="T:Mozo.Api.Catalogo.ProductoAtributoEndPoints">
+            <summary>
+            Clase estatica que para llamar al grupo de end points "tblproductoatributo".
+            </summary>
+            <summary>
+            Clase estatica donde se encuentran los procedimientos y funciones de los end points "tblproductoatributo".
+            </summary>
+        </member>
+        <member name="M:Mozo.Api.Catalogo.ProductoAtributoEndPoints.MapProductoAtributo(Microsoft.AspNetCore.Routing.RouteGroupBuilder)">
+            <summary>
+            Función que devuelve el grupo de end points de la entidad "tblproductoatributo".
+            </summary>
+        </member>
+        <member name="T:Mozo.Api.Catalogo.ProductoEndPoints">
+            <summary>
+            Clase estatica que para llamar al grupo de end points "tblproducto".
+            </summary>
+            <summary>
+            Clase estatica donde se encuentran los procedimientos y funciones de los end points "tblproducto".
+            </summary>
+        </member>
+        <member name="M:Mozo.Api.Catalogo.ProductoEndPoints.MapProducto(Microsoft.AspNetCore.Routing.RouteGroupBuilder)">
+            <summary>
+            Función que devuelve el grupo de end points de la entidad "tblproducto".
+            </summary>
+        </member>
+        <member name="T:Mozo.Api.Catalogo.ProductoImpuestoEndPoints">
+            <summary>
+            Clase estatica que para llamar al grupo de end points "tblproductoimpuesto".
+            </summary>
+            <summary>
+            Clase estatica donde se encuentran los procedimientos y funciones de los end points "tblproductoimpuesto".
+            </summary>
+        </member>
+        <member name="M:Mozo.Api.Catalogo.ProductoImpuestoEndPoints.MapProductoImpuesto(Microsoft.AspNetCore.Routing.RouteGroupBuilder)">
+            <summary>
+            Función que devuelve el grupo de end points de la entidad "tblproductoimpuesto".
+            </summary>
+        </member>
+        <member name="T:Mozo.Api.Catalogo.ProductoPrecioEndPoints">
+            <summary>
+            Clase estatica que para llamar al grupo de end points "tblproductoprecio".
+            </summary>
+            <summary>
+            Clase estatica donde se encuentran los procedimientos y funciones de los end points "tblproductoprecio".
+            </summary>
+        </member>
+        <member name="M:Mozo.Api.Catalogo.ProductoPrecioEndPoints.MapProductoPrecio(Microsoft.AspNetCore.Routing.RouteGroupBuilder)">
+            <summary>
+            Función que devuelve el grupo de end points de la entidad "tblproductoprecio".
+            </summary>
+        </member>
+        <member name="T:Mozo.Api.Catalogo.ProductoStockEndPoints">
+            <summary>
+            Clase estatica que para llamar al grupo de end points "tblproductostock".
+            </summary>
+            <summary>
+            Clase estatica donde se encuentran los procedimientos y funciones de los end points "tblproductostock".
+            </summary>
+        </member>
+        <member name="M:Mozo.Api.Catalogo.ProductoStockEndPoints.MapProductoStock(Microsoft.AspNetCore.Routing.RouteGroupBuilder)">
+            <summary>
+            Función que devuelve el grupo de end points de la entidad "tblproductostock".
+            </summary>
+        </member>
+        <member name="M:Mozo.Api.Login.EmpresaEndPoints.MapEmpresa(Microsoft.AspNetCore.Routing.RouteGroupBuilder)">
+            <summary>
+            Función que devuelve el grupo de end points de la entidad "tblempresa".
+            </summary>
+        </member>
+        <member name="T:Mozo.Api.Maestro.TipoGeneralEndPoints">
+            <summary>
+            Clase estatica que para llamar al grupo de end points "trftipogeneral".
+            </summary>
+        </member>
+        <member name="M:Mozo.Api.Maestro.TipoGeneralEndPoints.MapTipoGeneral(Microsoft.AspNetCore.Routing.RouteGroupBuilder)">
+            <summary>
+            Función que devuelve el grupo de end points de la entidad "trftipogeneral".
+            </summary>
+        </member>
+        <member name="T:Mozo.Api.Maestro.TipoParticularEndPoints">
+            <summary>
+            Clase estatica que para llamar al grupo de end points "trftipoparticular".
+            </summary>
+        </member>
+        <member name="M:Mozo.Api.Maestro.TipoParticularEndPoints.MapTipoParticular(Microsoft.AspNetCore.Routing.RouteGroupBuilder)">
+            <summary>
+            Función que devuelve el grupo de end points de la entidad "trftipoparticular".
+            </summary>
+        </member>
+        <member name="T:Mozo.Api.Seguridad.EmpresaEndPoints">
+            <summary>
+             EmpresaEndPointsAdmin
+            </summary>
+            <history>
+             Create by Jonatan Abregu
+            </history>
+        </member>
+        <member name="M:Mozo.Api.Seguridad.EmpresaEndPoints.MapEmpresa(Microsoft.AspNetCore.Routing.RouteGroupBuilder)">
+            <summary>
+             MapEmpresaAdmin
+            </summary>
+            <history>
+             Create by Jonatan Abregu
+            </history>
+        </member>
+        <member name="T:Mozo.Api.Seguridad.EmpresaModuloEndPoints">
+            <summary>
+             EmpresaModuloEndPointsAdmin
+            </summary>
+            <history>
+             Create by Jonatan Abregu
+            </history>
+        </member>
+        <member name="M:Mozo.Api.Seguridad.EmpresaModuloEndPoints.MapEmpresaModulo(Microsoft.AspNetCore.Routing.RouteGroupBuilder)">
+            <summary>
+             MapEmpresaModuloAdmin
+            </summary>
+            <history>
+             Create by Jonatan Abregu
+            </history>
+        </member>
+        <member name="T:Mozo.Api.Seguridad.MenuEndPoints">
+            <summary>
+             MenuEndPointsAdmin
+            </summary>
+            <history>
+             Create by Jonatan Abregu
+            </history>
+        </member>
+        <member name="M:Mozo.Api.Seguridad.MenuEndPoints.MapMenu(Microsoft.AspNetCore.Routing.RouteGroupBuilder)">
+            <summary>
+             MapMenuAdmin
+            </summary>
+            <history>
+             Create by Jonatan Abregu
+            </history>
+        </member>
+        <member name="T:Mozo.Api.Seguridad.ModuloEndPoints">
+            <summary>
+             ModuloEndPointsAdmin
+            </summary>
+            <history>
+             Create by Jonatan Abregu
+            </history>
+        </member>
+        <member name="M:Mozo.Api.Seguridad.ModuloEndPoints.MapModulo(Microsoft.AspNetCore.Routing.RouteGroupBuilder)">
+            <summary>
+             MapModuloAdmin
+            </summary>
+            <history>
+             Create by Jonatan Abregu
+            </history>
+        </member>
+        <member name="M:Mozo.ApiSeguridad.Helper.EndpointExtensions.MapWithAutoTag(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder,System.String,System.Type,System.Action{Microsoft.AspNetCore.Routing.RouteGroupBuilder})">
+            <summary>
+            Para clases estáticas: recibe el <see cref="T:System.Type"/> explícito.
+            </summary>
+        </member>
+    </members>
+</doc>

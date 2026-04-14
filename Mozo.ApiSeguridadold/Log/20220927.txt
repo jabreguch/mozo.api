@@ -1,0 +1,245 @@
+Access to the path 'I:\Desarrollo\PrjMozo\Temporary\ScsDCvo4xa6478303sd.jpg.part_14.22' is denied. 17:41:29
+Status: 500
+Instance: /UploadApi/Carga
+Type: internal-server-error
+Detail: System.UnauthorizedAccessException: Access to the path 'I:\Desarrollo\PrjMozo\Temporary\ScsDCvo4xa6478303sd.jpg.part_14.22' is denied.
+   at System.IO.FileSystem.DeleteFile(String fullPath)
+   at System.IO.File.Delete(String path)
+   at Mozo.ApiSeguridad.Controllers.Admin.UploadApiController.MergeFile(UploadFilePathAndConfigModel uploadFilePathAndConfig) in I:\Desarrollo\PrjMozo\Mozo.ApiSeguridad\Mozo.ApiSeguridad\Controllers\Admin\UploadApiController.cs:line 180
+   at Mozo.ApiSeguridad.Controllers.Admin.UploadApiController.Carga() in I:\Desarrollo\PrjMozo\Mozo.ApiSeguridad\Mozo.ApiSeguridad\Controllers\Admin\UploadApiController.cs:line 77
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)...traceId: 00-63930c4a1bfcd27fc0695d8b97630bc2-cc74317a1ce535a7-00
+Access to the path 'I:\Desarrollo\PrjMozo\Temporary\Zo9deMkvFi6478303cv11d.jpg.part_3.20' is denied. 17:41:42
+Status: 500
+Instance: /UploadApi/Carga
+Type: internal-server-error
+Detail: System.UnauthorizedAccessException: Access to the path 'I:\Desarrollo\PrjMozo\Temporary\Zo9deMkvFi6478303cv11d.jpg.part_3.20' is denied.
+   at System.IO.FileSystem.DeleteFile(String fullPath)
+   at System.IO.File.Delete(String path)
+   at Mozo.ApiSeguridad.Controllers.Admin.UploadApiController.MergeFile(UploadFilePathAndConfigModel uploadFilePathAndConfig) in I:\Desarrollo\PrjMozo\Mozo.ApiSeguridad\Mozo.ApiSeguridad\Controllers\Admin\UploadApiController.cs:line 180
+   at Mozo.ApiSeguridad.Controllers.Admin.UploadApiController.Carga() in I:\Desarrollo\PrjMozo\Mozo.ApiSeguridad\Mozo.ApiSeguridad\Controllers\Admin\UploadApiController.cs:line 77
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)...traceId: 00-c837c991e723c94ee9b1b9c28a26666a-93497d3606ec6589-00
+Access to the path 'I:\Desarrollo\PrjMozo\Temporary\egrDy1zdO76478303cv11d.jpg.part_11.20' is denied. 17:43:18
+Status: 500
+Instance: /UploadApi/Carga
+Type: internal-server-error
+Detail: System.UnauthorizedAccessException: Access to the path 'I:\Desarrollo\PrjMozo\Temporary\egrDy1zdO76478303cv11d.jpg.part_11.20' is denied.
+   at System.IO.FileSystem.DeleteFile(String fullPath)
+   at Mozo.ApiSeguridad.Controllers.Admin.UploadApiController.MergeFile(UploadFilePathAndConfigModel uploadFilePathAndConfig) in I:\Desarrollo\PrjMozo\Mozo.ApiSeguridad\Mozo.ApiSeguridad\Controllers\Admin\UploadApiController.cs:line 180
+   at Mozo.ApiSeguridad.Controllers.Admin.UploadApiController.Carga() in I:\Desarrollo\PrjMozo\Mozo.ApiSeguridad\Mozo.ApiSeguridad\Controllers\Admin\UploadApiController.cs:line 77
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)...traceId: 00-00348cf51a9802519eda8a9588ba6d07-8f72b805563b84b7-00
+Access to the path 'I:\Desarrollo\PrjMozo\Temporary\tB6ilIgvsk6478303cv13d.jpg.part_12.35' is denied. 17:45:06
+Status: 500
+Instance: /UploadApi/Carga
+Type: internal-server-error
+Detail: System.UnauthorizedAccessException: Access to the path 'I:\Desarrollo\PrjMozo\Temporary\tB6ilIgvsk6478303cv13d.jpg.part_12.35' is denied.
+   at System.IO.FileSystem.DeleteFile(String fullPath)
+   at System.IO.File.Delete(String path)
+   at Mozo.ApiSeguridad.Controllers.Admin.UploadApiController.MergeFile(UploadFilePathAndConfigModel uploadFilePathAndConfig) in I:\Desarrollo\PrjMozo\Mozo.ApiSeguridad\Mozo.ApiSeguridad\Controllers\Admin\UploadApiController.cs:line 180
+   at Mozo.ApiSeguridad.Controllers.Admin.UploadApiController.Carga() in I:\Desarrollo\PrjMozo\Mozo.ApiSeguridad\Mozo.ApiSeguridad\Controllers\Admin\UploadApiController.cs:line 77
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)...traceId: 00-f6e81c82c6dbdd0080954497d07411d0-baefdcb0a7361684-00
+Access to the path 'I:\Desarrollo\PrjMozo\Temporary\tB6ilIgvsk6478303cv13d.jpg.part_30.35' is denied. 17:45:07
+Status: 500
+Instance: /UploadApi/Carga
+Type: internal-server-error
+Detail: System.UnauthorizedAccessException: Access to the path 'I:\Desarrollo\PrjMozo\Temporary\tB6ilIgvsk6478303cv13d.jpg.part_30.35' is denied.
+   at System.IO.FileSystem.DeleteFile(String fullPath)
+   at System.IO.File.Delete(String path)
+   at Mozo.ApiSeguridad.Controllers.Admin.UploadApiController.MergeFile(UploadFilePathAndConfigModel uploadFilePathAndConfig) in I:\Desarrollo\PrjMozo\Mozo.ApiSeguridad\Mozo.ApiSeguridad\Controllers\Admin\UploadApiController.cs:line 180
+   at Mozo.ApiSeguridad.Controllers.Admin.UploadApiController.Carga() in I:\Desarrollo\PrjMozo\Mozo.ApiSeguridad\Mozo.ApiSeguridad\Controllers\Admin\UploadApiController.cs:line 77
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)...traceId: 00-0af401b295842d6dee049dbcf4788605-5dc0bfed815b59fd-00
+Access to the path 'I:\Desarrollo\PrjMozo\Temporary\7eYf5DBXQS6478303cv13d.jpg.part_13.35' is denied. 17:51:01
+Status: 500
+Instance: /UploadApi/Carga
+Type: internal-server-error
+Detail: System.UnauthorizedAccessException: Access to the path 'I:\Desarrollo\PrjMozo\Temporary\7eYf5DBXQS6478303cv13d.jpg.part_13.35' is denied.
+   at System.IO.FileSystem.DeleteFile(String fullPath)
+   at System.IO.File.Delete(String path)
+   at Mozo.ApiSeguridad.Controllers.Admin.UploadApiController.MergeFile(UploadFilePathAndConfigModel uploadFilePathAndConfig) in I:\Desarrollo\PrjMozo\Mozo.ApiSeguridad\Mozo.ApiSeguridad\Controllers\Admin\UploadApiController.cs:line 180
+   at Mozo.ApiSeguridad.Controllers.Admin.UploadApiController.Carga() in I:\Desarrollo\PrjMozo\Mozo.ApiSeguridad\Mozo.ApiSeguridad\Controllers\Admin\UploadApiController.cs:line 77
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)...traceId: 00-4a69dd9efa9b1fc7f7edfc0f06e222af-c28daf64a2eeb730-00
+Access to the path 'I:\Desarrollo\PrjMozo\Temporary\uTR63odBDcimagenesfalsas.jpg.part_2.3' is denied. 18:02:55
+Status: 500
+Instance: /UploadApi/Carga
+Type: internal-server-error
+Detail: System.UnauthorizedAccessException: Access to the path 'I:\Desarrollo\PrjMozo\Temporary\uTR63odBDcimagenesfalsas.jpg.part_2.3' is denied.
+   at System.IO.FileSystem.DeleteFile(String fullPath)
+   at Mozo.ApiSeguridad.Controllers.Admin.UploadApiController.MergeFile(UploadFilePathAndConfigModel uploadFilePathAndConfig) in I:\Desarrollo\PrjMozo\Mozo.ApiSeguridad\Mozo.ApiSeguridad\Controllers\Admin\UploadApiController.cs:line 180
+   at Mozo.ApiSeguridad.Controllers.Admin.UploadApiController.Carga() in I:\Desarrollo\PrjMozo\Mozo.ApiSeguridad\Mozo.ApiSeguridad\Controllers\Admin\UploadApiController.cs:line 77
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)...traceId: 00-707e05eb491ad9d82708c804b7c7acbf-47119c93d209be2e-00
+Access to the path 'I:\Desarrollo\PrjMozo\Temporary\GcGBQAvjLc6478303cv13d.jpg.part_4.35' is denied. 18:16:08
+Status: 500
+Instance: /UploadApi/Carga
+Type: internal-server-error
+Detail: System.UnauthorizedAccessException: Access to the path 'I:\Desarrollo\PrjMozo\Temporary\GcGBQAvjLc6478303cv13d.jpg.part_4.35' is denied.
+   at System.IO.FileSystem.DeleteFile(String fullPath)
+   at Mozo.ApiSeguridad.Controllers.Admin.UploadApiController.MergeFile(UploadFilePathAndConfigModel uploadFilePathAndConfig) in I:\Desarrollo\PrjMozo\Mozo.ApiSeguridad\Mozo.ApiSeguridad\Controllers\Admin\UploadApiController.cs:line 180
+   at Mozo.ApiSeguridad.Controllers.Admin.UploadApiController.Carga() in I:\Desarrollo\PrjMozo\Mozo.ApiSeguridad\Mozo.ApiSeguridad\Controllers\Admin\UploadApiController.cs:line 77
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)...traceId: 00-ba3b627730ed5fb2e37e04a84a1777f6-65de607f10ea7397-00
+Access to the path 'I:\Desarrollo\PrjMozo\Temporary\GcGBQAvjLc6478303cv13d.jpg.part_28.35' is denied. 18:16:08
+Status: 500
+Instance: /UploadApi/Carga
+Type: internal-server-error
+Detail: System.UnauthorizedAccessException: Access to the path 'I:\Desarrollo\PrjMozo\Temporary\GcGBQAvjLc6478303cv13d.jpg.part_28.35' is denied.
+   at System.IO.FileSystem.DeleteFile(String fullPath)
+   at Mozo.ApiSeguridad.Controllers.Admin.UploadApiController.MergeFile(UploadFilePathAndConfigModel uploadFilePathAndConfig) in I:\Desarrollo\PrjMozo\Mozo.ApiSeguridad\Mozo.ApiSeguridad\Controllers\Admin\UploadApiController.cs:line 180
+   at Mozo.ApiSeguridad.Controllers.Admin.UploadApiController.Carga() in I:\Desarrollo\PrjMozo\Mozo.ApiSeguridad\Mozo.ApiSeguridad\Controllers\Admin\UploadApiController.cs:line 77
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)...traceId: 00-2311c78d3925b99897b2384f1b74ad80-94ec4b083cbec094-00
+Access to the path 'I:\Desarrollo\PrjMozo\Temporary\GcGBQAvjLc6478303cv13d.jpg.part_35.35' is denied. 18:16:08
+Status: 500
+Instance: /UploadApi/Carga
+Type: internal-server-error
+Detail: System.UnauthorizedAccessException: Access to the path 'I:\Desarrollo\PrjMozo\Temporary\GcGBQAvjLc6478303cv13d.jpg.part_35.35' is denied.
+   at System.IO.FileSystem.DeleteFile(String fullPath)
+   at Mozo.ApiSeguridad.Controllers.Admin.UploadApiController.MergeFile(UploadFilePathAndConfigModel uploadFilePathAndConfig) in I:\Desarrollo\PrjMozo\Mozo.ApiSeguridad\Mozo.ApiSeguridad\Controllers\Admin\UploadApiController.cs:line 180
+   at Mozo.ApiSeguridad.Controllers.Admin.UploadApiController.Carga() in I:\Desarrollo\PrjMozo\Mozo.ApiSeguridad\Mozo.ApiSeguridad\Controllers\Admin\UploadApiController.cs:line 77
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)...traceId: 00-3cd8c9b10894da8af5fcfde5474e3454-956a5b2b8ae44b8c-00

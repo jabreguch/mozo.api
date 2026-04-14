@@ -1,0 +1,2793 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Sistema Mozo API",
+    "description": "Este es un web api para trabajar con los datos de la empresa",
+    "contact": {
+      "name": "Inkasoftware",
+      "email": "jabregu@jne.gob.pe"
+    },
+    "license": {
+      "name": "MIT"
+    },
+    "version": "3.1.0"
+  },
+  "paths": {
+    "/Admin/Empresa/Save": {
+      "post": {
+        "tags": [
+          "EmpresaEndPointsAdmin"
+        ],
+        "summary": "Grabar empresa",
+        "description": "Con este endpoint puede insertar o actualizar una empresa",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpresaModel"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpresaModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/Admin/Empresa/UpdateState": {
+      "post": {
+        "tags": [
+          "EmpresaEndPointsAdmin"
+        ],
+        "summary": "Eliminar empresa",
+        "description": "Con este endpoint puede eliminar una empresa por id",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpresaModel"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpresaModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/Admin/Empresa/Delete": {
+      "delete": {
+        "tags": [
+          "EmpresaEndPointsAdmin"
+        ],
+        "summary": "Eliminar empresa",
+        "description": "Con este endpoint puede eliminar una empresa por id",
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/Admin/Empresa/GetById": {
+      "get": {
+        "tags": [
+          "EmpresaEndPointsAdmin"
+        ],
+        "summary": "Obtener una empresa",
+        "description": "Con este endpoint puede obtener una empresa por su id",
+        "parameters": [
+          {
+            "name": "CoEmpresa",
+            "in": "query",
+            "description": "Codigo de la empresa",
+            "schema": {
+              "type": "int"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Obtener una empresa",
+          "content": { }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmpresaModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/Admin/Empresa/GetAll": {
+      "get": {
+        "tags": [
+          "EmpresaEndPointsAdmin"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EmpresaModel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/Admin/Empresa/GetAllActivo": {
+      "get": {
+        "tags": [
+          "EmpresaEndPointsAdmin"
+        ],
+        "summary": "Obtener todas las empresa activas",
+        "description": "Con este endpoint puede obtener Obtener todas las empresa activas",
+        "requestBody": {
+          "description": "Obtener una empresa",
+          "content": { }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EmpresaModel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/Login/Ingreso/CloseToken": {
+      "post": {
+        "tags": [
+          "IngresoEndPointsLogin"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/IngresoModel"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/IngresoModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/Login/Ingreso/RevokeToken": {
+      "post": {
+        "tags": [
+          "IngresoEndPointsLogin"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/IngresoModel"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/IngresoModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngresoModel"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/Login/Ingreso/RenewToken": {
+      "get": {
+        "tags": [
+          "IngresoEndPointsLogin"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenModel"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/Login/Permiso/GetById": {
+      "get": {
+        "tags": [
+          "PermisoEndPointsLogin"
+        ],
+        "summary": "Obtener permiso por id",
+        "description": "Con este endpoint puede permiso por id",
+        "parameters": [
+          {
+            "name": "CoEmpresa",
+            "in": "query",
+            "description": "Codigo de la empresa",
+            "schema": {
+              "type": "int"
+            }
+          },
+          {
+            "name": "CoPermiso",
+            "in": "query",
+            "description": "Codigo del permiso",
+            "schema": {
+              "type": "int"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PermisoModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/Login/Permiso/GetByUser": {
+      "get": {
+        "tags": [
+          "PermisoEndPointsLogin"
+        ],
+        "summary": "Obtener usuario",
+        "description": "Con este endpoint obtiene el usuario",
+        "parameters": [
+          {
+            "name": "NoUsuario",
+            "in": "query",
+            "description": "Nombre del usuario",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NoClave",
+            "in": "query",
+            "description": "Clave de la cuenta",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Login/Permiso/UpdateLanguage": {
+      "post": {
+        "tags": [
+          "PermisoEndPointsLogin"
+        ],
+        "summary": "Actualizar el lenguaje ",
+        "description": "Con este endpoint puede actualizar el lenguaje",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/PermisoModel"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/PermisoModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PermisoModel"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CredencialModel": {
+        "type": "object",
+        "properties": {
+          "NoUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEmpresa": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoPermiso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoIngreso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmpresaModel": {
+        "required": [
+          "NoEmpresa",
+          "NoEmpresaCorto"
+        ],
+        "type": "object",
+        "properties": {
+          "Credencial": {
+            "$ref": "#/components/schemas/CredencialModel"
+          },
+          "FeCre": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlSitReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoEstReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstadoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoFuncion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoInputSearch": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumentoSigla": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoModulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoCorreoElectronico": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoFijo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoMovil": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoUbigeo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "PageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "PageIndex": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "RowsCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoEmpresa": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoVision": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoMision": {
+            "type": "string",
+            "nullable": true
+          },
+          "TxQuienSoy": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDireccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NuDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoLogoLigthExtension": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoLogoLigthArchivo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoExtension": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoArchivo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoLogoDarkExtension": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoLogoDarkArchivo": {
+            "type": "string",
+            "nullable": true
+          },
+          "LogoDarkArchivo": {
+            "type": "string",
+            "format": "binary",
+            "nullable": true
+          },
+          "LogoLigthArchivo": {
+            "type": "string",
+            "format": "binary",
+            "nullable": true
+          },
+          "NoEmpresa": {
+            "maxLength": 150,
+            "minLength": 1,
+            "type": "string"
+          },
+          "NoEmpresaCorto": {
+            "maxLength": 80,
+            "minLength": 1,
+            "type": "string"
+          },
+          "EmpresaModuloCol": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmpresaModuloModel"
+            },
+            "nullable": true
+          },
+          "HorarioCol": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HorarioModel"
+            },
+            "nullable": true
+          },
+          "SocialLst": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SocialModel"
+            },
+            "nullable": true
+          },
+          "ImagenPageWebLst": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagenWebModel"
+            },
+            "nullable": true
+          },
+          "noDireccionCompleto": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmpresaModuloModel": {
+        "type": "object",
+        "properties": {
+          "Credencial": {
+            "$ref": "#/components/schemas/CredencialModel"
+          },
+          "FeCre": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlSitReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoEstReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstadoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoFuncion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoInputSearch": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumentoSigla": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoModulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoCorreoElectronico": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoFijo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoMovil": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoUbigeo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "PageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "PageIndex": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "RowsCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NuOrden": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoModulo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoModuloDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlOnlyTypeMasterTable": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "HorarioModel": {
+        "type": "object",
+        "properties": {
+          "Credencial": {
+            "$ref": "#/components/schemas/CredencialModel"
+          },
+          "FeCre": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlSitReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoEstReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstadoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoFuncion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoInputSearch": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumentoSigla": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoModulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoCorreoElectronico": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoFijo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoMovil": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoUbigeo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "PageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "PageIndex": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "RowsCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoHorario": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoDia": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoTabEmpresa": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoDia": {
+            "type": "string",
+            "nullable": true
+          },
+          "HoInicio": {
+            "type": "string",
+            "nullable": true
+          },
+          "HoFinal": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "HttpValidationProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          },
+          "errors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
+      },
+      "ImagenWebModel": {
+        "type": "object",
+        "properties": {
+          "Credencial": {
+            "$ref": "#/components/schemas/CredencialModel"
+          },
+          "FeCre": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlSitReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoEstReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstadoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoFuncion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoInputSearch": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumentoSigla": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoModulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoCorreoElectronico": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoFijo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoMovil": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoUbigeo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "PageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "PageIndex": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "RowsCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoImagenWeb": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoImagenWeb": {
+            "type": "string",
+            "nullable": true
+          },
+          "TxDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NuAncho": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NuLargo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IngresoModel": {
+        "type": "object",
+        "properties": {
+          "Credencial": {
+            "$ref": "#/components/schemas/CredencialModel"
+          },
+          "FeCre": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlSitReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoEstReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstadoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoFuncion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoInputSearch": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumentoSigla": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoModulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoCorreoElectronico": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoFijo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoMovil": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoUbigeo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "PageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "PageIndex": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "RowsCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoIngreso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoPermiso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "FeUtcIngreso": {
+            "type": "string",
+            "nullable": true
+          },
+          "FeUtcSalida": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoIp": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoRefreshToken": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MenuModel": {
+        "type": "object",
+        "properties": {
+          "Credencial": {
+            "$ref": "#/components/schemas/CredencialModel"
+          },
+          "FeCre": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlSitReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoEstReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstadoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoFuncion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoInputSearch": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumentoSigla": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoModulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoCorreoElectronico": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoFijo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoMovil": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoUbigeo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "PageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "PageIndex": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "RowsCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NuOrden": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoMenu": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoMenu": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "PaginalCol": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaginaModel"
+            },
+            "nullable": true
+          },
+          "CoModulo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoModuloDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoPerfil": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModuloUsuarioModel": {
+        "type": "object",
+        "properties": {
+          "Credencial": {
+            "$ref": "#/components/schemas/CredencialModel"
+          },
+          "FeCre": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlSitReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoEstReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstadoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoFuncion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoInputSearch": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumentoSigla": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoModulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoCorreoElectronico": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoFijo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoMovil": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoUbigeo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "PageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "PageIndex": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "RowsCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoModuloUsuario": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoPerfil": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "FeExpiracion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoPerfil": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoArea": {
+            "type": "string",
+            "nullable": true
+          },
+          "NuOrden": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "TxConfiguracion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoCarpetaVirtual": {
+            "type": "string",
+            "nullable": true
+          },
+          "MenuCol": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MenuModel"
+            },
+            "nullable": true
+          },
+          "CoGrupo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoGrupo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoPersona": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoApellidoP": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoApellidoM": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoModuloDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoModulo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoUrlWeb": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoUrlWebApi": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlOnlyTypeMasterTable": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoNombreCompleto": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "NoIcono": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaginaFlotanteModel": {
+        "type": "object",
+        "properties": {
+          "Credencial": {
+            "$ref": "#/components/schemas/CredencialModel"
+          },
+          "FeCre": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlSitReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoEstReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstadoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoFuncion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoInputSearch": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumentoSigla": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoModulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoCorreoElectronico": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoFijo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoMovil": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoUbigeo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "PageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "PageIndex": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "RowsCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NuOrden": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "TxDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoMenu": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoArea": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoTipoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoPaginaPadre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoControlador": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoAccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoMenu": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoParametro": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoOpcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoModulo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoModuloDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoArea": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaginaModel": {
+        "type": "object",
+        "properties": {
+          "Credencial": {
+            "$ref": "#/components/schemas/CredencialModel"
+          },
+          "FeCre": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlSitReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoEstReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstadoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoFuncion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoInputSearch": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumentoSigla": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoModulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoCorreoElectronico": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoFijo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoMovil": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoUbigeo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "PageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "PageIndex": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "RowsCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoModulo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoTipoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "TxDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoMenu": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoPaginaPadre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoArea": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoPerfil": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoControlador": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoAccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoMenu": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoOpcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NuOrden": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoParametro": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoModuloDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoArea": {
+            "type": "string",
+            "nullable": true
+          },
+          "SubPaginaCol": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubPaginaModel"
+            },
+            "nullable": true
+          },
+          "PaginaFlotanteCol": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaginaFlotanteModel"
+            },
+            "nullable": true
+          },
+          "ServicioWebCol": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServicioWebModel"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PermisoModel": {
+        "required": [
+          "NoClave",
+          "NoUsuario"
+        ],
+        "type": "object",
+        "properties": {
+          "Credencial": {
+            "$ref": "#/components/schemas/CredencialModel"
+          },
+          "FeCre": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlSitReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoEstReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstadoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoFuncion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoInputSearch": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumentoSigla": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoModulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoCorreoElectronico": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoFijo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoMovil": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoUbigeo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "PageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "PageIndex": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "RowsCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoPermiso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoUsuario": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "NoClave": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "CoLang": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoModulo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoLocal": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "FeExpiracion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NuDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "ModuloUsuario": {
+            "$ref": "#/components/schemas/ModuloUsuarioModel"
+          },
+          "ModuloUsuarioCol": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModuloUsuarioModel"
+            },
+            "nullable": true
+          },
+          "FlIngreso": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "NoIp": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServicioWebModel": {
+        "type": "object",
+        "properties": {
+          "Credencial": {
+            "$ref": "#/components/schemas/CredencialModel"
+          },
+          "FeCre": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlSitReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoEstReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstadoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoFuncion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoInputSearch": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumentoSigla": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoModulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoCorreoElectronico": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoFijo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoMovil": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoUbigeo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "PageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "PageIndex": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "RowsCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "TxDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoMenu": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoArea": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoPaginaPadre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoControlador": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoAccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoMenu": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoParametro": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoOpcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NuOrden": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoModulo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoModuloDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoArea": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoTipoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SocialModel": {
+        "type": "object",
+        "properties": {
+          "Credencial": {
+            "$ref": "#/components/schemas/CredencialModel"
+          },
+          "FeCre": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlSitReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoEstReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstadoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoFuncion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoInputSearch": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumentoSigla": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoModulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoCorreoElectronico": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoFijo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoMovil": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoUbigeo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "PageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "PageIndex": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "RowsCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoEmpresa": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoSocial": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoOrigen": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoTipo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoIcono": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SubPaginaModel": {
+        "type": "object",
+        "properties": {
+          "Credencial": {
+            "$ref": "#/components/schemas/CredencialModel"
+          },
+          "FeCre": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlSitReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoEstReg": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoEstadoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoFuncion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoInputSearch": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTipoDocumentoSigla": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoModulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoCorreoElectronico": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoFijo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoTelefonoMovil": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoUbigeo": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoProvincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoDistrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "PageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "PageIndex": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "RowsCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NuOrden": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoMenu": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "TxDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoMenu": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CoPaginaPadre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoOpcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoParametro": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoControlador": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoAccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoArea": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "PaginaFlotanteCol": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaginaFlotanteModel"
+            },
+            "nullable": true
+          },
+          "ServicioWebCol": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServicioWebModel"
+            },
+            "nullable": true
+          },
+          "CoModulo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NoModuloDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoArea": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoTipoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TokenModel": {
+        "type": "object",
+        "properties": {
+          "NoToken": {
+            "type": "string",
+            "nullable": true
+          },
+          "NoRefresh": {
+            "type": "string",
+            "nullable": true
+          },
+          "FeExpiration": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}

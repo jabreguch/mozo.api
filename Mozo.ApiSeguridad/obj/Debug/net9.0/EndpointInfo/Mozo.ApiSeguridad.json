@@ -1,0 +1,5740 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Sistema Mozo API",
+    "description": "Este es un web api para trabajar con los datos de la empresa",
+    "contact": {
+      "name": "Inkasoftware",
+      "email": "jabregu@jne.gob.pe"
+    },
+    "license": {
+      "name": "MIT"
+    },
+    "version": "v1"
+  },
+  "paths": {
+    "/catalogo/atributo": {
+      "post": {
+        "tags": [
+          "Catalogo - Atributo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AtributoModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Catalogo - Atributo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AtributoModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Catalogo - Atributo"
+        ],
+        "parameters": [
+          {
+            "name": "FlEstReg",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NoInputSearch",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CursorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AtributoModel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/catalogo/atributo/state": {
+      "patch": {
+        "tags": [
+          "Catalogo - Atributo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AtributoModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/catalogo/atributo/{coatributo}": {
+      "delete": {
+        "tags": [
+          "Catalogo - Atributo"
+        ],
+        "parameters": [
+          {
+            "name": "coatributo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Catalogo - Atributo"
+        ],
+        "parameters": [
+          {
+            "name": "coatributo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AtributoModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/catalogo/atributo/active": {
+      "get": {
+        "tags": [
+          "Catalogo - Atributo"
+        ],
+        "parameters": [
+          {
+            "name": "FlEstReg",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NoInputSearch",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CursorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AtributoModel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/catalogo/producto": {
+      "post": {
+        "tags": [
+          "Catalogo - Producto"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductoModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Catalogo - Producto"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductoModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Catalogo - Producto"
+        ],
+        "parameters": [
+          {
+            "name": "CoProveedorPrincipal",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CoMarca",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "FlEstReg",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NoInputSearch",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CursorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductoModelPaginationModel"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/catalogo/producto/state": {
+      "patch": {
+        "tags": [
+          "Catalogo - Producto"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductoModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/catalogo/producto/{coproducto}": {
+      "delete": {
+        "tags": [
+          "Catalogo - Producto"
+        ],
+        "parameters": [
+          {
+            "name": "coproducto",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Catalogo - Producto"
+        ],
+        "parameters": [
+          {
+            "name": "coproducto",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductoModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/catalogo/producto/active": {
+      "get": {
+        "tags": [
+          "Catalogo - Producto"
+        ],
+        "parameters": [
+          {
+            "name": "CoProveedorPrincipal",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CoMarca",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "FlEstReg",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NoInputSearch",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CursorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductoModelPaginationModel"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/catalogo/producto-atributo": {
+      "post": {
+        "tags": [
+          "Catalogo - ProductoAtributo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductoAtributoModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Catalogo - ProductoAtributo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductoAtributoModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Catalogo - ProductoAtributo"
+        ],
+        "parameters": [
+          {
+            "name": "FlEstReg",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NoInputSearch",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CursorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductoAtributoModel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/catalogo/producto-atributo/state": {
+      "patch": {
+        "tags": [
+          "Catalogo - ProductoAtributo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductoAtributoModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/catalogo/producto-atributo/{coproductoatributo}": {
+      "delete": {
+        "tags": [
+          "Catalogo - ProductoAtributo"
+        ],
+        "parameters": [
+          {
+            "name": "coproductoatributo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Catalogo - ProductoAtributo"
+        ],
+        "parameters": [
+          {
+            "name": "coproductoatributo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductoAtributoModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/catalogo/producto-atributo/active": {
+      "get": {
+        "tags": [
+          "Catalogo - ProductoAtributo"
+        ],
+        "parameters": [
+          {
+            "name": "FlEstReg",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NoInputSearch",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CursorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductoAtributoModel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/login/menu/modulos": {
+      "get": {
+        "tags": [
+          "Login - Menu"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ModuloUsuarioModel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/login/permiso/login": {
+      "post": {
+        "tags": [
+          "Login - Permiso"
+        ],
+        "summary": "Obtener usuario",
+        "description": "Con este endpoint obtiene el usuario",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PermisoFilterDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalCredencialModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/login/permiso/login-check": {
+      "get": {
+        "tags": [
+          "Login - Permiso"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalCredencialModel"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/login/permiso/login-renew": {
+      "post": {
+        "tags": [
+          "Login - Permiso"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IngresoFilterDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalCredencialModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/login/permiso/language": {
+      "patch": {
+        "tags": [
+          "Login - Permiso"
+        ],
+        "summary": "Actualizar el lenguaje ",
+        "description": "Con este endpoint puede actualizar el lenguaje",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PermisoModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PermisoModel"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/maestro/tipo-particular": {
+      "post": {
+        "tags": [
+          "Maestro - TipoParticular"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoParticularModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Maestro - TipoParticular"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoParticularModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Maestro - TipoParticular"
+        ],
+        "parameters": [
+          {
+            "name": "CoGrupo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CoTipo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "FlEstReg",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NoInputSearch",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CursorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoParticularModelPaginationModel"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/maestro/tipo-particular/{cogrupo}/{cotipo}": {
+      "delete": {
+        "tags": [
+          "Maestro - TipoParticular"
+        ],
+        "parameters": [
+          {
+            "name": "cogrupo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "cotipo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Maestro - TipoParticular"
+        ],
+        "parameters": [
+          {
+            "name": "cogrupo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "cotipo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoParticularModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/maestro/tipo-particular/state": {
+      "patch": {
+        "tags": [
+          "Maestro - TipoParticular"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoParticularModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/maestro/tipo-particular/command": {
+      "patch": {
+        "tags": [
+          "Maestro - TipoParticular"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoParticularModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/maestro/tipo-particular/default": {
+      "patch": {
+        "tags": [
+          "Maestro - TipoParticular"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoParticularModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/maestro/tipo-particular/active": {
+      "get": {
+        "tags": [
+          "Maestro - TipoParticular"
+        ],
+        "parameters": [
+          {
+            "name": "CoGrupo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CoTipo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "FlEstReg",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NoInputSearch",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CursorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TipoParticularModel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/maestro/tipo-particular/hijos": {
+      "get": {
+        "tags": [
+          "Maestro - TipoParticular"
+        ],
+        "parameters": [
+          {
+            "name": "CoGrupo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CoTipo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "FlEstReg",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NoInputSearch",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CursorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TipoParticularModel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/maestro/tipo-particular/hijos/active": {
+      "get": {
+        "tags": [
+          "Maestro - TipoParticular"
+        ],
+        "parameters": [
+          {
+            "name": "CoGrupo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CoTipo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "FlEstReg",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NoInputSearch",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CursorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TipoParticularModel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/maestro/tipo-particular/hijos/grupos/active": {
+      "get": {
+        "tags": [
+          "Maestro - TipoParticular"
+        ],
+        "parameters": [
+          {
+            "name": "CoGrupo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CoTipo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "FlEstReg",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NoInputSearch",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CursorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TipoParticularModel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/maestro/tipo-particular/modulos/grupos": {
+      "get": {
+        "tags": [
+          "Maestro - TipoParticular"
+        ],
+        "parameters": [
+          {
+            "name": "CoGrupo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CoTipo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "FlEstReg",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NoInputSearch",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CursorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TipoParticularModel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/maestro/tipo-particular/next-orden": {
+      "get": {
+        "tags": [
+          "Maestro - TipoParticular"
+        ],
+        "parameters": [
+          {
+            "name": "CoGrupo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CoTipo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "FlEstReg",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NoInputSearch",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CursorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/maestro/tipo-particular/grupos/{cotipo}": {
+      "get": {
+        "tags": [
+          "Maestro - TipoParticular"
+        ],
+        "parameters": [
+          {
+            "name": "CoGrupo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "cotipo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "FlEstReg",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NoInputSearch",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CursorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoParticularModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/seguridad/modulo": {
+      "post": {
+        "tags": [
+          "Seguridad - Modulo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModuloModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Seguridad - Modulo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModuloModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Seguridad - Modulo"
+        ],
+        "parameters": [
+          {
+            "name": "CoModulo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "FlEstReg",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NoInputSearch",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CursorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ModuloModel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/seguridad/modulo/state": {
+      "patch": {
+        "tags": [
+          "Seguridad - Modulo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModuloModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/seguridad/modulo/{comodulo}": {
+      "delete": {
+        "tags": [
+          "Seguridad - Modulo"
+        ],
+        "parameters": [
+          {
+            "name": "comodulo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Seguridad - Modulo"
+        ],
+        "parameters": [
+          {
+            "name": "comodulo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModuloModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/seguridad/modulo/active": {
+      "get": {
+        "tags": [
+          "Seguridad - Modulo"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ModuloModel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/seguridad/modulo/active/areas": {
+      "get": {
+        "tags": [
+          "Seguridad - Modulo"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ModuloModel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/seguridad/perfil": {
+      "post": {
+        "tags": [
+          "Seguridad - Perfil"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PerfilModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Seguridad - Perfil"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PerfilModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Seguridad - Perfil"
+        ],
+        "parameters": [
+          {
+            "name": "FlEstReg",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NoInputSearch",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CursorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PerfilModel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/seguridad/perfil/{coperfil}": {
+      "delete": {
+        "tags": [
+          "Seguridad - Perfil"
+        ],
+        "parameters": [
+          {
+            "name": "coperfil",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Seguridad - Perfil"
+        ],
+        "parameters": [
+          {
+            "name": "coperfil",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PerfilModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/seguridad/perfil/UpdateState": {
+      "patch": {
+        "tags": [
+          "Seguridad - Perfil"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PerfilModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/seguridad/perfil/default": {
+      "get": {
+        "tags": [
+          "Seguridad - Perfil"
+        ],
+        "parameters": [
+          {
+            "name": "FlEstReg",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NoInputSearch",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CursorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PerfilModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/seguridad/perfil/active": {
+      "get": {
+        "tags": [
+          "Seguridad - Perfil"
+        ],
+        "parameters": [
+          {
+            "name": "FlEstReg",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NoInputSearch",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "CursorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PerfilModel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AtributoModel": {
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coAtributo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nuOrden": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noAtributo": {
+            "type": "string",
+            "nullable": true
+          },
+          "coTipoDato": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coCategoria": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "flObligatorio": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "flFiltrable": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "flDescriptivo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CredencialModel": {
+        "type": "object",
+        "properties": {
+          "noUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "noNombreCompleto": {
+            "type": "string",
+            "nullable": true
+          },
+          "coEmpresa": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPermiso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coIngreso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GlobalCredencialModel": {
+        "type": "object",
+        "properties": {
+          "credencial": {
+            "$ref": "#/components/schemas/CredencialModel"
+          },
+          "noToken": {
+            "type": "string",
+            "nullable": true
+          },
+          "noTokenRefresh": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "HttpValidationProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          },
+          "errors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
+      },
+      "IngresoFilterDto": {
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noInputSearch": {
+            "type": "string",
+            "nullable": true
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cursorId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "direction": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "pageIndex": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coIngreso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noRefreshToken": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IngresoModel": {
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coIngreso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPermiso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noIp": {
+            "type": "string",
+            "nullable": true
+          },
+          "noRefreshToken": {
+            "type": "string",
+            "nullable": true
+          },
+          "noRefreshTokenPrevious": {
+            "type": "string",
+            "nullable": true
+          },
+          "coEmpresa": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MenuModel": {
+        "required": [
+          "noMenu",
+          "nuOrden"
+        ],
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nuOrden": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "coMenu": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noMenu": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "coPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coModulo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noModuloDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "coPerfil": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "paginaLst": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaginaModel"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModuloModel": {
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noIcono": {
+            "type": "string",
+            "nullable": true
+          },
+          "nuOrden": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "flArea": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coModulo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noArea": {
+            "type": "string",
+            "nullable": true
+          },
+          "noModulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "noModuloDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "coEmpresa": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "perfilCol": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PerfilModel"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModuloUsuarioModel": {
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coModuloUsuario": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coModulo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPerfil": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "feExpiracion": {
+            "type": "string",
+            "nullable": true
+          },
+          "txConfiguracion": {
+            "type": "string",
+            "nullable": true
+          },
+          "noModulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "noPerfil": {
+            "type": "string",
+            "nullable": true
+          },
+          "noArea": {
+            "type": "string",
+            "nullable": true
+          },
+          "nuOrden": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noCarpetaVirtual": {
+            "type": "string",
+            "nullable": true
+          },
+          "menuLst": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MenuModel"
+            },
+            "nullable": true
+          },
+          "noIcono": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaginaFlotanteModel": {
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nuOrden": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "txDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "coPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coMenu": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coArea": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coTipoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPaginaPadre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noControlador": {
+            "type": "string",
+            "nullable": true
+          },
+          "noAccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "noMenu": {
+            "type": "string",
+            "nullable": true
+          },
+          "noParametro": {
+            "type": "string",
+            "nullable": true
+          },
+          "noOpcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "coModulo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noModuloDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "noArea": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaginaModel": {
+        "required": [
+          "coArea",
+          "coMenu",
+          "coModulo",
+          "coTipoPagina",
+          "noAccion",
+          "noControlador",
+          "noOpcion",
+          "nuOrden"
+        ],
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coModulo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "coTipoPagina": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "coPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "txDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "coMenu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "coPaginaPadre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coArea": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "noControlador": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "noAccion": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "noOpcion": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "nuOrden": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "noParametro": {
+            "type": "string",
+            "nullable": true
+          },
+          "coPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noArea": {
+            "type": "string",
+            "nullable": true
+          },
+          "subPaginaLst": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubPaginaModel"
+            },
+            "nullable": true
+          },
+          "paginaFlotanteLst": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaginaFlotanteModel"
+            },
+            "nullable": true
+          },
+          "servicioWebLst": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServicioWebModel"
+            },
+            "nullable": true
+          },
+          "coPerfil": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noModuloDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "noMenu": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PerfilModel": {
+        "required": [
+          "noPerfil"
+        ],
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPerfil": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noPerfil": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "coModulo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "flDefault": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "flDefault2": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "noModuloDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "perfilPaginaLst": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PerfilPaginaModel"
+            },
+            "nullable": true
+          },
+          "menuLst": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MenuModel"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PerfilPaginaModel": {
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPerfilPrivilegio": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPerfil": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coModulo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coMenu": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPaginaPadre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nuOrden": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noMenu": {
+            "type": "string",
+            "nullable": true
+          },
+          "coTipoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noArea": {
+            "type": "string",
+            "nullable": true
+          },
+          "noControlador": {
+            "type": "string",
+            "nullable": true
+          },
+          "noAccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "noOpcion": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PermisoFilterDto": {
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noInputSearch": {
+            "type": "string",
+            "nullable": true
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cursorId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "direction": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "pageIndex": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coEmpresa": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPermiso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noIp": {
+            "type": "string",
+            "nullable": true
+          },
+          "noUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "noClave": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PermisoModel": {
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPermiso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "noClave": {
+            "type": "string",
+            "nullable": true
+          },
+          "coLang": {
+            "type": "string",
+            "nullable": true
+          },
+          "coEmpresa": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noNombreCompleto": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PersonaModel": {
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coDocumentoIdentidad": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nuDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "noPersona": {
+            "type": "string",
+            "nullable": true
+          },
+          "noApellidoP": {
+            "type": "string",
+            "nullable": true
+          },
+          "noApellidoM": {
+            "type": "string",
+            "nullable": true
+          },
+          "noDireccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "noCodigoPostal": {
+            "type": "string",
+            "nullable": true
+          },
+          "coEstadoCivil": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noReferencia": {
+            "type": "string",
+            "nullable": true
+          },
+          "txDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "coProfesion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coSexo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coRubro": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPais": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "feNacimiento": {
+            "type": "string",
+            "nullable": true
+          },
+          "noNombreCompleto": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "noProfesion": {
+            "type": "string",
+            "nullable": true
+          },
+          "noEstadoCivil": {
+            "type": "string",
+            "nullable": true
+          },
+          "noRubro": {
+            "type": "string",
+            "nullable": true
+          },
+          "noEmpresa": {
+            "type": "string",
+            "nullable": true
+          },
+          "noEmpresaCorto": {
+            "type": "string",
+            "nullable": true
+          },
+          "coPersonaTipo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noPersonaTipo": {
+            "type": "string",
+            "nullable": true
+          },
+          "permiso": {
+            "$ref": "#/components/schemas/PermisoModel"
+          },
+          "ingreso": {
+            "$ref": "#/components/schemas/IngresoModel"
+          },
+          "coModulo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "redSocialLst": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RedSocialModel"
+            },
+            "nullable": true
+          },
+          "personaTipoLst": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PersonaTipoModel"
+            },
+            "nullable": true
+          },
+          "coIngreso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "flSimpleView": {
+            "type": "boolean"
+          },
+          "flCreateItem": {
+            "type": "boolean"
+          },
+          "noTelefonoMovil": {
+            "type": "string",
+            "nullable": true
+          },
+          "noTelefonoFijo": {
+            "type": "string",
+            "nullable": true
+          },
+          "noCorreoElectronico": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PersonaTipoModel": {
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPersonaTipo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "flDesabilitado": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coModulo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coTipo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noTipo": {
+            "type": "string",
+            "nullable": true
+          },
+          "noModuloDescripcion": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductoAtributoModel": {
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coProductoAtributo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coProducto": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coAtributo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noValor": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductoModel": {
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coProducto": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noProducto": {
+            "type": "string",
+            "nullable": true
+          },
+          "noModelo": {
+            "type": "string",
+            "nullable": true
+          },
+          "coMarca": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coLaboratorio": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUnidadInventario": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUnidadCompra": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUnidadVenta": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coProveedorPrincipal": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "ssFactorVenta": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "noCodigoFiscal": {
+            "type": "string",
+            "nullable": true
+          },
+          "coTipo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coCategoria": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coCategoriaHijo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "flImpuesto": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "flInventario": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "flImpuestoExento": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "txDescripcionCorta": {
+            "type": "string",
+            "nullable": true
+          },
+          "noEstadoAlmacen": {
+            "type": "string",
+            "nullable": true
+          },
+          "noMarca": {
+            "type": "string",
+            "nullable": true
+          },
+          "noLaboratorio": {
+            "type": "string",
+            "nullable": true
+          },
+          "noMoneda": {
+            "type": "string",
+            "nullable": true
+          },
+          "noMonedaSigla": {
+            "type": "string",
+            "nullable": true
+          },
+          "noImpuesto": {
+            "type": "string",
+            "nullable": true
+          },
+          "noImpuestoSigla": {
+            "type": "string",
+            "nullable": true
+          },
+          "noUnidadInventario": {
+            "type": "string",
+            "nullable": true
+          },
+          "noUnidadCompra": {
+            "type": "string",
+            "nullable": true
+          },
+          "noUnidadVenta": {
+            "type": "string",
+            "nullable": true
+          },
+          "noTipoPrecio": {
+            "type": "string",
+            "nullable": true
+          },
+          "ssPrecioVenta": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "ssPrecioVentaMinimo": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "noProductoCompleto": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "noProductoCompletoCorto": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "proveedor": {
+            "$ref": "#/components/schemas/PersonaModel"
+          },
+          "productoStock": {
+            "$ref": "#/components/schemas/ProductoStockModel"
+          },
+          "productoPrecioLst": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductoPrecioModel"
+            },
+            "nullable": true
+          },
+          "tipoCambio": {
+            "$ref": "#/components/schemas/TipoCambioModel"
+          },
+          "flSimpleView": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductoModelPaginationModel": {
+        "type": "object",
+        "properties": {
+          "rowsCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductoModel"
+            },
+            "nullable": true
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "firstId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "lastId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "pageIndex": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "pageCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductoPrecioModel": {
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coProductoPrecio": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coTipoPrecio": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coProducto": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "ssPrecio": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "coMoneda": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noTipoPrecio": {
+            "type": "string",
+            "nullable": true
+          },
+          "flDefault": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductoStockModel": {
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coProductoStock": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coProducto": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coAlmacen": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coLocal": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "qtInicial": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "qtMaxima": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "qtMinima": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noLocal": {
+            "type": "string",
+            "nullable": true
+          },
+          "noAlmacen": {
+            "type": "string",
+            "nullable": true
+          },
+          "flDefault": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noLocalAndAlmacen": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RedSocialModel": {
+        "required": [
+          "noRedSocial"
+        ],
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coRedSocial": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coEtiqueta": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coTipoUrl": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coTipoRedSocial": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noRedSocial": {
+            "maxLength": 250,
+            "minLength": 1,
+            "type": "string"
+          },
+          "coPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "flPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "flWhatsapp": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "flWhatsapp2": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "noIconoTipoUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "noEtiqueta": {
+            "type": "string",
+            "nullable": true
+          },
+          "noTipoRedSocial": {
+            "type": "string",
+            "nullable": true
+          },
+          "noTipoUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "etiquetaLst": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TipoGeneralModel"
+            },
+            "nullable": true
+          },
+          "tipoUrlLst": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TipoGeneralModel"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServicioWebModel": {
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "txDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "coMenu": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coArea": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPaginaPadre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noControlador": {
+            "type": "string",
+            "nullable": true
+          },
+          "noAccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "noMenu": {
+            "type": "string",
+            "nullable": true
+          },
+          "noParametro": {
+            "type": "string",
+            "nullable": true
+          },
+          "noOpcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "nuOrden": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coModulo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noModuloDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "noArea": {
+            "type": "string",
+            "nullable": true
+          },
+          "coTipoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SubPaginaModel": {
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nuOrden": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noMenu": {
+            "type": "string",
+            "nullable": true
+          },
+          "coPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "txDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "coMenu": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coPaginaPadre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noOpcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "noParametro": {
+            "type": "string",
+            "nullable": true
+          },
+          "noControlador": {
+            "type": "string",
+            "nullable": true
+          },
+          "noAccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "coArea": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coModulo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noArea": {
+            "type": "string",
+            "nullable": true
+          },
+          "coTipoPagina": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noModuloDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "paginaFlotanteLst": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaginaFlotanteModel"
+            },
+            "nullable": true
+          },
+          "servicioWebLst": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServicioWebModel"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoCambioModel": {
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coTipoCambio": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coFuente": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coMonedaOrigen": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coMonedaDestino": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "feTipoCambio": {
+            "type": "string",
+            "nullable": true
+          },
+          "flAutomatico": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "ssCompra": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "ssVenta": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "feTipoCambioMes": {
+            "type": "string",
+            "nullable": true
+          },
+          "noMoneda": {
+            "type": "string",
+            "nullable": true
+          },
+          "noMonedaSigla": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoGeneralModel": {
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "txDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "coTipo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coModulo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noTipo": {
+            "type": "string",
+            "nullable": true
+          },
+          "coGrupo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noSigla": {
+            "type": "string",
+            "nullable": true
+          },
+          "flDefault": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nuOrden": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noComando": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoParticularModel": {
+        "type": "object",
+        "properties": {
+          "flEstReg": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuMod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuCre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coUsuEli": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coGrupo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coModulo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coTipo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nuOrden": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noTipo": {
+            "type": "string",
+            "nullable": true
+          },
+          "noSigla": {
+            "type": "string",
+            "nullable": true
+          },
+          "txDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "noValor": {
+            "type": "string",
+            "nullable": true
+          },
+          "coGrupoPadre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coTipoPadre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "flDefault": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noComando": {
+            "type": "string",
+            "nullable": true
+          },
+          "flDefault2": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "noGrupo": {
+            "type": "string",
+            "nullable": true
+          },
+          "noGrupoPadre": {
+            "type": "string",
+            "nullable": true
+          },
+          "noTipoPadre": {
+            "type": "string",
+            "nullable": true
+          },
+          "noModuloDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "coPersona": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coGrupoHijo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "qtHijo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coServicio": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "flLoadChildren": {
+            "type": "boolean"
+          },
+          "flSiglaView": {
+            "type": "boolean"
+          },
+          "coSubGrupo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "coSubTipo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noSubValor": {
+            "type": "string",
+            "nullable": true
+          },
+          "noSubSigla": {
+            "type": "string",
+            "nullable": true
+          },
+          "nuSubOrden": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noSubTipo": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoParticularModelPaginationModel": {
+        "type": "object",
+        "properties": {
+          "rowsCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TipoParticularModel"
+            },
+            "nullable": true
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "firstId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "lastId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "pageIndex": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "pageCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "JWT Authorization header usando el esquema Bearer. Ejemplo: \"Bearer {token}\"",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}
