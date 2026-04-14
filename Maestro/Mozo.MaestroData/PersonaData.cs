@@ -103,7 +103,7 @@ public partial class PersonaData : IPersonaData
             "CoUsuMod"
         );
         string sql = $"CALL {_schema}.usp_persona_update_state({args})";
-        await _connection.ExecuteScalarAsync(sql, c);
+        await _connection.ExecuteScalarAsync(sql, pr);
     }
     public async Task DeleteByIdAsync(PersonaModel c)
     {

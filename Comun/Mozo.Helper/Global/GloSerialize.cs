@@ -3,6 +3,7 @@ using Dapper;
 
 using Microsoft.AspNetCore.Http;
 
+using System.Collections.Concurrent;
 using System.Data;
 using System.Reflection;
 using System.Security.Claims;
@@ -318,14 +319,17 @@ public static partial class Glo
     }
     */
 
+    private static readonly ConcurrentDictionary<Type, Dictionary<string, PropertyInfo>> _propCache = new();
+
+    private static Dictionary<string, PropertyInfo> GetProps(Type type)
+        => _propCache.GetOrAdd(type, modelType =>
+            modelType.GetProperties().ToDictionary(p => p.Name, StringComparer.OrdinalIgnoreCase));
+
     public static (DynamicParameters Parameters, string SqlArgs) Build<T>(T model, int? coEmpresa, int? coPersona, params string[] propertyNames)
     {
         DynamicParameters parameters = new();
         List<string> sqlArgs = new();
-        PropertyInfo[] props = typeof(T).GetProperties();
-
-        //parameters.Add("@CoEmpresa", coEmpresa, DbType.Int32);
-        //parameters.Add("@CoPersona", coPersona, DbType.Int32);
+        Dictionary<string, PropertyInfo> props = GetProps(typeof(T));
 
         foreach (string name in propertyNames)
         {
@@ -338,11 +342,10 @@ public static partial class Glo
             {
                 parameters.Add("@" + name, coPersona, DbType.Int32);
                 sqlArgs.Add("@" + name);
-            }            
+            }
             else
             {
-                PropertyInfo? prop = props.FirstOrDefault(x => x.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
-                if (prop == null) continue;
+                if (!props.TryGetValue(name, out PropertyInfo? prop)) continue;
 
                 object? value = prop.GetValue(model);
                 Type type = Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType;
@@ -357,8 +360,6 @@ public static partial class Glo
                     Type t when t == typeof(long) => DbType.Int64,
                     _ => DbType.Object
                 };
-
-            
 
                 parameters.Add("@" + name, value, dbType);
                 sqlArgs.Add("@" + name);
