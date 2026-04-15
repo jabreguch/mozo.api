@@ -340,7 +340,7 @@ public static partial class Glo
             string.Equals(name, "CoUsuEli", StringComparison.OrdinalIgnoreCase));
 
         if (requiresUserContext && (!coEmpresa.HasValue || !coPersona.HasValue || coEmpresa <= 0 || coPersona <= 0))
-            throw new UnauthorizedAccessException("Contexto de usuario inválido");
+            throw new UnauthorizedAccessException("Contexto de usuario requerido: valores de CoEmpresa y CoPersona deben ser mayores a 0");
 
         DynamicParameters parameters = new();
         List<string> sqlArgs = new();
@@ -390,8 +390,10 @@ public static partial class Glo
 
     public static void ValidateUserContext(UserContext user)
     {
-        if (user == null || !user.CoPersona.HasValue || !user.CoEmpresa.HasValue || user.CoPersona <= 0 || user.CoEmpresa <= 0)
+        if (user == null)
             throw new UnauthorizedAccessException("Contexto de usuario inválido");
+
+        user.Validate();
     }
 
     private static DbType ToDbType(Type propertyType)
