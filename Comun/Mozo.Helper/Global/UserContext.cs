@@ -14,6 +14,8 @@ public class UserContext
 
     public UserContext(IClaimsService claimsService)
     {
+        ArgumentNullException.ThrowIfNull(claimsService);
+
         IsAuthenticated = claimsService.IsAuthenticated;
         CoPersona = claimsService.GetInt32("CoPersona");
         CoEmpresa = claimsService.GetInt32("CoEmpresa") ?? CoEmpresa;

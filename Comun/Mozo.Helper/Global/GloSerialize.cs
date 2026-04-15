@@ -341,15 +341,17 @@ public static partial class Glo
             if (string.IsNullOrWhiteSpace(name))
                 continue;
 
+            string parameterName = NormalizeParameterName(name);
+
             if (name == "CoEmpresa" && coEmpresa != null)
             {
-                AddParameter(parameters, name, coEmpresa, DbType.Int32);
-                sqlArgs.Add("@" + name);
+                AddParameter(parameters, parameterName, coEmpresa, DbType.Int32);
+                sqlArgs.Add(parameterName);
             }
             else if ((name == "CoUsuCre" || name == "CoUsuMod" || name == "CoUsuEli") && coPersona != null)
             {
-                AddParameter(parameters, name, coPersona, DbType.Int32);
-                sqlArgs.Add("@" + name);
+                AddParameter(parameters, parameterName, coPersona, DbType.Int32);
+                sqlArgs.Add(parameterName);
             }
             else
             {
@@ -357,8 +359,8 @@ public static partial class Glo
 
                 object? value = prop.GetValue(model);
                 DbType dbType = ToDbType(prop.PropertyType);
-                AddParameter(parameters, name, value, dbType);
-                sqlArgs.Add("@" + name);
+                AddParameter(parameters, parameterName, value, dbType);
+                sqlArgs.Add(parameterName);
             }
         }
 
@@ -372,7 +374,7 @@ public static partial class Glo
         if (string.IsNullOrWhiteSpace(name))
             throw new ArgumentException("El nombre del parámetro es obligatorio.", nameof(name));
 
-        string parameterName = name.StartsWith("@", StringComparison.Ordinal) ? name : $"@{name}";
+        string parameterName = NormalizeParameterName(name);
         parameters.Add(parameterName, value ?? DBNull.Value, dbType);
     }
 
@@ -401,6 +403,11 @@ public static partial class Glo
             Type t when t == typeof(Guid) => DbType.Guid,
             _ => DbType.Object
         };
+    }
+
+    private static string NormalizeParameterName(string name)
+    {
+        return name.StartsWith("@", StringComparison.Ordinal) ? name : $"@{name}";
     }
     /*
     public static (DynamicParameters Parameters, string SqlArgs) Build<T>(T model, params string[] propertyNames)

@@ -43,15 +43,7 @@ public partial class PermisoData : IPermisoData
         Glo.AddParameter(pr, "NoClave", c.NoClave, DbType.String);
 
         string sql = $"SELECT * FROM {_schema}.fn_permiso_sel_by_user(@NoUsuario,@NoClave)";
-
-        try
-        {
-            return await _connection.QueryFirstOrDefaultAsync<PermisoModel>(sql, pr);
-        }
-        catch (Exception ex)
-        {
-            throw new InvalidOperationException("Error al consultar permisos por usuario.", ex);
-        }
+        return await _connection.QueryFirstOrDefaultAsync<PermisoModel>(sql, pr);
     }
 
     public async Task<PermisoModel?> SelByIdAsync(PermisoFilterDto c)
@@ -64,15 +56,7 @@ public partial class PermisoData : IPermisoData
         Glo.AddParameter(pr, "CoEmpresa", _user.CoEmpresa, DbType.Int32);
         Glo.AddParameter(pr, "CoPermiso", c.CoPermiso, DbType.Int32);
         string sql = $"SELECT * FROM {_schema}.fn_permiso_sel_by_id(@CoEmpresa,@CoPermiso)";
-
-        try
-        {
-            return await _connection.QueryFirstOrDefaultAsync<PermisoModel>(sql, pr);
-        }
-        catch (Exception ex)
-        {
-            throw new InvalidOperationException("Error al consultar permiso por identificador.", ex);
-        }
+        return await _connection.QueryFirstOrDefaultAsync<PermisoModel>(sql, pr);
     }
 
     public async Task UpdateLanguageAsync(PermisoModel c)
@@ -87,14 +71,7 @@ public partial class PermisoData : IPermisoData
         Glo.AddParameter(pr, "CoLang", c.CoLang, DbType.Int32);
 
         string sql = $"CALL {_schema}.usp_permiso_update_language(@CoEmpresa,@CoPermiso,@CoLang)";
-        try
-        {
-            await _connection.ExecuteScalarAsync(sql, pr);
-        }
-        catch (Exception ex)
-        {
-            throw new InvalidOperationException("Error al actualizar el idioma del permiso.", ex);
-        }
+        await _connection.ExecuteScalarAsync(sql, pr);
     }
 
 }

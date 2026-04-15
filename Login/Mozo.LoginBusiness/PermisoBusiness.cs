@@ -22,14 +22,7 @@ public class PermisoBusiness : IPermisoBusiness
         if (c == null)
             throw new ArgumentNullException(nameof(c));
 
-        try
-        {
-            return await _data.SelByIdAsync(c);
-        }
-        catch (Exception ex)
-        {
-            throw new InvalidOperationException("No se pudo obtener el permiso por identificador.", ex);
-        }
+        return await _data.SelByIdAsync(c);
     }
 
     public async Task<PermisoModel?> SelByUserAsync(PermisoFilterDto c)
@@ -37,28 +30,14 @@ public class PermisoBusiness : IPermisoBusiness
         if (c == null)
             throw new ArgumentNullException(nameof(c));
 
-        try
-        {
-            return await _data.SelByUserAsync(c);
-        }
-        catch (Exception ex)
-        {
-            throw new InvalidOperationException("No se pudo obtener el permiso por usuario.", ex);
-        }
+        return await _data.SelByUserAsync(c);
     }
     public async Task UpdateLanguageAsync(PermisoModel c)
     {
         if (c == null)
             throw new ArgumentNullException(nameof(c));
 
-        try
-        {
-            await _data.UpdateLanguageAsync(c);
-        }
-        catch (Exception ex)
-        {
-            throw new InvalidOperationException("No se pudo actualizar el idioma del permiso.", ex);
-        }
+        await _data.UpdateLanguageAsync(c);
     }
 
 }

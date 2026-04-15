@@ -9,7 +9,7 @@ public class UserContextService
 
     public UserContextService(IClaimsService claimsService)
     {
-        _claimsService = claimsService;
+        _claimsService = claimsService ?? throw new ArgumentNullException(nameof(claimsService));
     }
 
     public UserContext Create()
