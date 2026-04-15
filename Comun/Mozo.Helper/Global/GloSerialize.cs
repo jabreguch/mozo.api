@@ -332,6 +332,16 @@ public static partial class Glo
         if (propertyNames == null || propertyNames.Length == 0)
             throw new ArgumentException("Debe indicar al menos un parámetro.", nameof(propertyNames));
 
+        bool requiresUserContext = propertyNames.Any(name =>
+            string.Equals(name, "CoEmpresa", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(name, "CoPersona", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(name, "CoUsuCre", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(name, "CoUsuMod", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(name, "CoUsuEli", StringComparison.OrdinalIgnoreCase));
+
+        if (requiresUserContext && (!coEmpresa.HasValue || !coPersona.HasValue || coEmpresa <= 0 || coPersona <= 0))
+            throw new UnauthorizedAccessException("Contexto de usuario requerido: valores de CoEmpresa y CoPersona deben ser mayores a 0");
+
         DynamicParameters parameters = new();
         List<string> sqlArgs = new();
         Dictionary<string, PropertyInfo> props = GetProps(typeof(T));
@@ -381,7 +391,7 @@ public static partial class Glo
     public static void ValidateUserContext(UserContext user)
     {
         if (user == null)
-            throw new ArgumentNullException(nameof(user));
+            throw new UnauthorizedAccessException("Contexto de usuario inválido");
 
         user.Validate();
     }

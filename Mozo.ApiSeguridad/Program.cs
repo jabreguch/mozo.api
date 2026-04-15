@@ -6,7 +6,6 @@ using Microsoft.OpenApi;
 
 using Mozo.ApiSeguridad.Helper;
 using Mozo.CatalogoComposition;
-using Mozo.Helper.Contexts;
 using Mozo.Helper.Global;
 using Mozo.Helper.Services;
 
