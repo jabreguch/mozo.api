@@ -6,7 +6,9 @@ using Microsoft.OpenApi;
 
 using Mozo.ApiSeguridad.Helper;
 using Mozo.CatalogoComposition;
+using Mozo.Helper.Contexts;
 using Mozo.Helper.Global;
+using Mozo.Helper.Services;
 
 //using Mozo.ApiSeguridad.EndPoint.Login;
 using Mozo.HelperWeb.Token;
@@ -153,6 +155,8 @@ string connectionString = builder.Configuration.GetSection("ConnectionStrings").
 
 //builder.Services.AddScoped<PersonaBusiness>(x => new(connectionString));
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<IClaimsService, ClaimsService>();
+builder.Services.AddScoped<UserContextService>();
 builder.Services.AddScoped<UserContext>();
 // Solo agrego negocio, no DAL directamente
 builder.Services.SeguridadComposition(connectionString);
@@ -258,4 +262,3 @@ app.MapWithAutoTag("/seguridad/perfil", typeof(Mozo.Api.Seguridad.PerfilEndPoint
 
 
 app.Run();
-

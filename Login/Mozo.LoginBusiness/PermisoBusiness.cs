@@ -17,9 +17,48 @@ public class PermisoBusiness : IPermisoBusiness
         _data = data;
     }
 
-    public async Task<PermisoModel?> SelByIdAsync(PermisoFilterDto c) => await _data.SelByIdAsync(c);
+    public async Task<PermisoModel?> SelByIdAsync(PermisoFilterDto c)
+    {
+        if (c == null)
+            throw new ArgumentNullException(nameof(c));
 
-    public async Task<PermisoModel?> SelByUserAsync(PermisoFilterDto c) => await _data.SelByUserAsync(c);
-    public async Task UpdateLanguageAsync(PermisoModel c) => await _data.UpdateLanguageAsync(c);
+        try
+        {
+            return await _data.SelByIdAsync(c);
+        }
+        catch (Exception ex)
+        {
+            throw new InvalidOperationException("No se pudo obtener el permiso por identificador.", ex);
+        }
+    }
+
+    public async Task<PermisoModel?> SelByUserAsync(PermisoFilterDto c)
+    {
+        if (c == null)
+            throw new ArgumentNullException(nameof(c));
+
+        try
+        {
+            return await _data.SelByUserAsync(c);
+        }
+        catch (Exception ex)
+        {
+            throw new InvalidOperationException("No se pudo obtener el permiso por usuario.", ex);
+        }
+    }
+    public async Task UpdateLanguageAsync(PermisoModel c)
+    {
+        if (c == null)
+            throw new ArgumentNullException(nameof(c));
+
+        try
+        {
+            await _data.UpdateLanguageAsync(c);
+        }
+        catch (Exception ex)
+        {
+            throw new InvalidOperationException("No se pudo actualizar el idioma del permiso.", ex);
+        }
+    }
 
 }

@@ -327,20 +327,28 @@ public static partial class Glo
 
     public static (DynamicParameters Parameters, string SqlArgs) Build<T>(T model, int? coEmpresa, int? coPersona, params string[] propertyNames)
     {
+        if (model == null)
+            throw new ArgumentNullException(nameof(model));
+        if (propertyNames == null || propertyNames.Length == 0)
+            throw new ArgumentException("Debe indicar al menos un parámetro.", nameof(propertyNames));
+
         DynamicParameters parameters = new();
         List<string> sqlArgs = new();
         Dictionary<string, PropertyInfo> props = GetProps(typeof(T));
 
         foreach (string name in propertyNames)
         {
+            if (string.IsNullOrWhiteSpace(name))
+                continue;
+
             if (name == "CoEmpresa" && coEmpresa != null)
             {
-                parameters.Add("@" + name, coEmpresa, DbType.Int32);
+                AddParameter(parameters, name, coEmpresa, DbType.Int32);
                 sqlArgs.Add("@" + name);
             }
             else if ((name == "CoUsuCre" || name == "CoUsuMod" || name == "CoUsuEli") && coPersona != null)
             {
-                parameters.Add("@" + name, coPersona, DbType.Int32);
+                AddParameter(parameters, name, coPersona, DbType.Int32);
                 sqlArgs.Add("@" + name);
             }
             else
@@ -348,25 +356,51 @@ public static partial class Glo
                 if (!props.TryGetValue(name, out PropertyInfo? prop)) continue;
 
                 object? value = prop.GetValue(model);
-                Type type = Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType;
-
-                DbType dbType = type switch
-                {
-                    Type t when t == typeof(string) => DbType.String,
-                    Type t when t == typeof(int) => DbType.Int32,
-                    Type t when t == typeof(decimal) => DbType.Decimal,
-                    Type t when t == typeof(bool) => DbType.Boolean,
-                    Type t when t == typeof(DateTime) => DbType.DateTime,
-                    Type t when t == typeof(long) => DbType.Int64,
-                    _ => DbType.Object
-                };
-
-                parameters.Add("@" + name, value, dbType);
+                DbType dbType = ToDbType(prop.PropertyType);
+                AddParameter(parameters, name, value, dbType);
                 sqlArgs.Add("@" + name);
             }
         }
 
         return (parameters, string.Join(",", sqlArgs));
+    }
+
+    public static void AddParameter(DynamicParameters parameters, string name, object? value, DbType dbType)
+    {
+        if (parameters == null)
+            throw new ArgumentNullException(nameof(parameters));
+        if (string.IsNullOrWhiteSpace(name))
+            throw new ArgumentException("El nombre del parámetro es obligatorio.", nameof(name));
+
+        string parameterName = name.StartsWith("@", StringComparison.Ordinal) ? name : $"@{name}";
+        parameters.Add(parameterName, value ?? DBNull.Value, dbType);
+    }
+
+    public static void ValidateUserContext(UserContext user)
+    {
+        if (user == null)
+            throw new ArgumentNullException(nameof(user));
+
+        user.Validate();
+    }
+
+    private static DbType ToDbType(Type propertyType)
+    {
+        Type type = Nullable.GetUnderlyingType(propertyType) ?? propertyType;
+        return type switch
+        {
+            Type t when t == typeof(string) => DbType.String,
+            Type t when t == typeof(int) => DbType.Int32,
+            Type t when t == typeof(decimal) => DbType.Decimal,
+            Type t when t == typeof(bool) => DbType.Boolean,
+            Type t when t == typeof(DateTime) => DbType.DateTime,
+            Type t when t == typeof(long) => DbType.Int64,
+            Type t when t == typeof(short) => DbType.Int16,
+            Type t when t == typeof(double) => DbType.Double,
+            Type t when t == typeof(float) => DbType.Single,
+            Type t when t == typeof(Guid) => DbType.Guid,
+            _ => DbType.Object
+        };
     }
     /*
     public static (DynamicParameters Parameters, string SqlArgs) Build<T>(T model, params string[] propertyNames)
