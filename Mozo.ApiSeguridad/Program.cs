@@ -199,6 +199,7 @@ app.UseStaticFiles();
 app.UseCors();
 app.UseOutputCache();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 //app.UseAntiforgery();
