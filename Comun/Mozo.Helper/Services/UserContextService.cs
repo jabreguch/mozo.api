@@ -1,7 +1,6 @@
 using Mozo.Helper.Global;
-using Mozo.Helper.Services;
 
-namespace Mozo.Helper.Contexts;
+namespace Mozo.Helper.Services;
 
 public class UserContextService
 {
